@@ -54,11 +54,11 @@ class ArisCube(object):
         if vpath:
             if(vpath[0] == "student" and vpath[1] == "unfollow"):
                 cherrypy.response.headers["Content-Type"] = "application/json"
-                cherrypy.response.status = 200
-                print self.paramMap["username"]
-                print self.paramMap["code"]
+                cherrypy.response.status = 200                
                 self.usersCol.update({"username": self.paramMap["username"] }, { "$pull" : { "following": self.paramMap["code"]}})
-                return json.dumps({"success":1})
+                user=self.usersCol.find_one({"username": self.paramMap["username"]})
+                studentsList=user["following"]
+                return json.dumps({"success":1, "students_follow_cnt":len(studentsList)})
     
     def POST(self, *vpath, **params):
         self.paramMap = {}

@@ -167,7 +167,7 @@ header {
   text-align:center;
   border: 1px solid #000;
   padding: 5px;
-  background:#000099;
+  ##background:#000099;
 }
 
 header>h1{
@@ -242,11 +242,12 @@ div.student_list img
   }
 div.desc
   {
-  text-align:center;
+  text-align:left;
   width:50px;
   height:10px;
   margin:2px;
   }
+ 
   
 .line-separator-bottom{
 	height:1px;
@@ -259,6 +260,7 @@ div.desc
 
 .date{
 	position:relative;
+	float:right;
 }
 
 #front-text{
@@ -286,7 +288,11 @@ ul.checkmark li:before {
 }
 
 .studentname{
-	text-align:center;
+	color:blue;
+	font:bold;
+	display:block;
+	position:relative;
+	top:20px;
 }
 
 .comments{
@@ -308,4 +314,31 @@ ul.checkmark li:before {
 	font-size:15px;
 	margin:0px;
 	text-align:left;
+}
+
+#tt {
+ position:absolute;
+ display:block;
+ background:url(images/tt_left.gif) top left no-repeat;
+}
+#tttop {
+display:block;
+height:5px;
+margin-left:5px;
+background:url(images/tt_top.gif) top right no-repeat;
+overflow:hidden;
+}
+#ttcont {
+display:block;
+padding:2px 12px 3px 7px;
+margin-left:5px;
+background:#666;
+color:#fff;
+}
+#ttbot {
+display:block;
+height:5px;
+margin-left:5px;
+background:url(images/tt_bottom.gif) top right no-repeat;
+overflow:hidden;
 }

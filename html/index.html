@@ -19,29 +19,33 @@
 	<nav></nav>	
 	<div class="aris_cube_page">
 		<article>
-		<div class= "studentname" id="studentname"></div>
+		
 		<input type="hidden" id="studentcode" value="" />
 		<div class="filter">
-			<h4>Filter</h4>
-			<b>Month:</b> 
-			<input type="month" class="date" id="user_date" value="2011-12" />
+			<input type="month" class="date" id="user_date" value="2011-12" onmouseover="tooltip.show('Select Month and year', 200);"
+				  onmouseout="tooltip.hide();"/>
 		</div>
+		
 		<div id="follow_list">
-			<h4>Following: ${students_follow_cnt}</h4>		
+			<h4>Following: 
+			<div style= "display:inline" id="follow_cnt"> ${students_follow_cnt} </div></h4>		
 			% for a in students:
 				<div class="student_list" draggable="true">
-				  <a class="sel" id= "${a['name']}" onclick="GetStudentInfo(this.id);">			  
+				  <a class="sel" id= "${a['name']}" onclick="GetStudentInfo(this.id);" onmouseover="tooltip.show('Show Cube', 200);"
+				  onmouseout="tooltip.hide();">			  
 				  <img src="student.jpg" alt="" width="100" height="70" />
 				  </a>
 				  <div class="desc">${a['name']}</div>
-				  <a class="rem" name= "${a['name']}" onclick="unfollowStudent(this.name)">			  
+				  <a class="rem" name= "${a['name']}" onclick="unfollowStudent(this.name)" onmouseover="tooltip.show('Unfollow', 200);"
+				  onmouseout="tooltip.hide();">			  
 				   <img src="unfollow.png" width="10" height="10" />
 				  </a>
 				</div>
 			% endfor
 		</div>
-		<div class="line-separator-bottom"></div>		 
-		<div class="container">			
+		<div class="line-separator-bottom"></div>		
+		
+		<div class="container">		
 		  <div id="cube">
 			<figure id= "cube_front" class="front">
 				<div style="text-align:center;top=40%;" id="front-text">
@@ -85,7 +89,7 @@
 			</figure>
 		  </div>
 		</div>
-		
+		<div class= "studentname" id="studentname"></div>	
 		<div id="options">
 			<p id="show-buttons">
 			  <button id="show-front" class="show-front">Profile</button>
@@ -105,5 +109,25 @@
 		</div>
 	  </article>
 	</div>
+	<footer>
+		<div style="text-align:center">
+		<a href="http://www.w3.org/html/logo/">
+			<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics.png" width="165" height="64" 
+			alt="HTML5 Powered with CSS3 / Styling, and Graphics, 3D &amp; Effects" title="HTML5 Powered with CSS3 / Styling, and Graphics, 3D &amp; Effects">
+		</a>
+		<a href="http://www.python.org/community/logos/">
+			<img src="python-powered.png" width="165" height="64" 
+			alt="Python Powered" title="Python Powered">
+		</a>
+		<a href="http://www.mongodb.org/downloads">
+			<img src="PoweredMongoDB.png" width="165" height="64" 
+			alt="MongoDB Powered" title="MongoDB Powered">
+		</a>
+		<a href="http://wiki.wgenhq.net/wiki/index.php/Hackalot">
+			<img src="Hackalot.png" width="165" height="64" 
+			alt="Wireless Generation Hakathon" title="Wireless Generation Hakathon">
+		</a>
+		</div>
+	</footer>
 </body>
 </html>

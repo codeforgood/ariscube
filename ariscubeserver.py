@@ -49,6 +49,18 @@ conf = {
     '/unfollow.png': {
         'tools.staticfile.on': True,
         'tools.staticfile.filename': os.path.abspath(os.path.join(os.path.dirname(__file__), 'images/unfollow.png'))
+    },
+    '/PoweredMongoDB.png': {
+        'tools.staticfile.on': True,
+        'tools.staticfile.filename': os.path.abspath(os.path.join(os.path.dirname(__file__), 'images/PoweredMongoDB.png'))
+    },
+    '/python-powered.png': {
+        'tools.staticfile.on': True,
+        'tools.staticfile.filename': os.path.abspath(os.path.join(os.path.dirname(__file__), 'images/python-powered.png'))
+    },
+    '/Hackalot.png': {
+        'tools.staticfile.on': True,
+        'tools.staticfile.filename': os.path.abspath(os.path.join(os.path.dirname(__file__), 'images/Hackalot.png'))
     }
 } 
 cherrypy.quickstart(root, '/', conf)
