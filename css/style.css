@@ -217,7 +217,7 @@ h4{
 
 #follow_list {
 	background:#E4EFFA;
-	height:230px;
+	height:275px;
 	-webkit-border-radius: 20px;
 }
 
@@ -227,6 +227,8 @@ h4{
 	height:90%;
 	width:100%;
 	display:block;
+	text-align: center;
+	top:10px;
 }
 
 div.all_student_list{
