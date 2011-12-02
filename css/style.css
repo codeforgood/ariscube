@@ -1,0 +1,311 @@
+section, footer, header {
+  display: block;
+}
+
+body{
+	background: black;
+}
+
+.aris_cube_page{
+  position:relative;
+  margin:0 auto;
+  width:50%;
+  height:auto;
+  background: white; 
+  text-align: center;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border: 1px solid #000;
+  padding:20px 20px 20px 20px;
+}
+
+nav{
+  display: block;
+  background: #33CCFF; 
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  -webkit-text-size-adjust: none;
+  color: #333;
+}
+
+button {
+
+/* text */
+	text-decoration: 		none;
+	font: 					15px/1em 'Droid Sans', sans-serif;
+	font-weight: 			bold;
+	text-shadow: 			rgba(255,255,255,.5) 0 1px 0;
+	-webkit-user-select: 	none;
+	-moz-user-select: 		none;
+	user-select: 			none;
+	
+	
+/* layout */
+	padding: 				.5em .6em .4em .6em;
+	margin: 				.5em;
+	display: 				inline-block;
+	position: 				relative;
+	
+	-webkit-border-radius: 	8px;
+	-moz-border-radius: 	8px;
+	border-radius: 	8px;
+	
+/* effects */
+	border-top: 		1px solid rgba(255,255,255,0.8);
+	border-bottom: 		1px solid rgba(0,0,0,0.1);
+	
+	background-image: 	-webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) )), url(noise.png);
+	background-image: 	-moz-radial-gradient(top, ellipse cover, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%), url(noise.png);
+	background-image: 	gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) )), url(noise.png);
+
+	-webkit-transition: background .2s ease-in-out;
+	-moz-transition: 	background .2s ease-in-out;
+	transition: 		background .2s ease-in-out;
+	
+/* color */
+	color: 				hsl(0, 0%, 40%) !important;
+	background-color: 	hsl(0, 0%, 75%);
+	
+	-webkit-box-shadow: inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px, /* color border */
+						rgba(0,0,0,0.2) 0 .5em 5px; /* drop shadow */
+	-moz-box-shadow: 	inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px, /* color border */
+						rgba(0,0,0,0.2) 0 .5em 5px; /* drop shadow */
+	box-shadow:		 	inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px, /* color border */
+						rgba(0,0,0,0.2) 0 .5em 5px; /* drop shadow */
+}
+
+/* -------------- button (tag) -------------- */
+button:hover {
+	cursor: pointer;
+}
+
+
+/* -------------- icon -------------- */
+button:before {
+	font: 			1.2em/0 'Pictos', sans-serif;
+	content: 		attr(data-icon); /* gets the icon value from the custom data attribute and puts it infront of the button label */
+	margin-right: 	0.4em;
+	
+	
+}
+
+button:hover {
+	background-color: 	hsl(0, 0%, 83%);
+}
+
+
+
+button:active {
+	background-image: 	-webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
+	background-image: 	-moz-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
+	background-image: 	gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
+
+	-webkit-box-shadow: inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, /* inner shadow */ 
+							rgba(0,0,0,0.4) 0 .1em 1px, /* border */
+							rgba(0,0,0,0.2) 0 .2em 6px; /* drop shadow */
+	-moz-box-shadow: 	inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, /* inner shadow */ 
+							rgba(0,0,0,0.4) 0 .1em 1px, /* border */
+							rgba(0,0,0,0.2) 0 .2em 6px; /* drop shadow */
+	box-shadow: 		inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, /* inner shadow */ 
+							rgba(0,0,0,0.4) 0 .1em 1px, /* border */
+							rgba(0,0,0,0.2) 0 .2em 6px; /* drop shadow */
+
+	-webkit-transform: 	translateY(.2em);
+	-moz-transform: 	translateY(.2em);
+	transform: 			translateY(.2em);
+}
+
+button:focus {
+	outline: none;
+	color: rgba(254,255,255,0.9) !important;
+	text-shadow: rgba(0,0,0,0.2) 0 1px 2px;
+}
+
+button[disabled], button[disabled]:hover, button.disabled, button.disabled:hover {
+	opacity: 			.5;
+	cursor: 			default;
+	color: 				rgba(0,0,0,0.2) !important;
+	text-shadow: 		none !important;
+	background-color: 	rgba(0,0,0,0.05);
+	background-image: 	none;
+	border-top: 		none;
+
+	-webkit-box-shadow: inset rgba(255,254,255,0.4) 0 0.3em .3em, inset rgba(0,0,0,0.1) 0 -0.1em .3em, /* inner shadow */ 
+							rgba(0,0,0,0.3) 0 .1em 1px, /* border */
+							rgba(0,0,0,0.2) 0 .2em 6px; /* drop shadow */
+	-moz-box-shadow: 	inset rgba(255,254,255,0.4) 0 0.3em .3em, inset rgba(0,0,0,0.1) 0 -0.1em .3em, /* inner shadow */ 
+							rgba(0,0,0,0.3) 0 .1em 1px, /* border */
+							rgba(0,0,0,0.2) 0 .2em 6px; /* drop shadow */
+	box-shadow: 		inset rgba(255,254,255,0.4) 0 0.3em .3em, inset rgba(0,0,0,0.1) 0 -0.1em .3em, /* inner shadow */ 
+							rgba(0,0,0,0.3) 0 .1em 1px, /* border */
+							rgba(0,0,0,0.2) 0 .2em 6px; /* drop shadow */
+
+	-webkit-transform: 	translateY(5px);
+	-moz-transform: 	translateY(5px);
+	transform: 			translateY(5px);
+}
+
+footer {
+  border-top: 1px solid #CCC;
+  font-size: 0.8em;
+  position: relative;
+  z-index: 100;
+}
+
+figure {
+  margin:0px;
+}
+
+header { 
+  display:block;
+  height:100px;
+  text-align:center;
+  border: 1px solid #000;
+  padding: 5px;
+  background:#000099;
+}
+
+header>h1{
+ color:white;
+}
+
+header>h2{
+ color:#FF0000;
+ display:inline;
+ left:800px;
+}
+
+h4{
+ color:blue;
+ text-align:left;
+}
+
+#options{
+	display: block;
+	position: relative;
+	top: 50px;
+	left:0px;
+	margin: 20px;
+}
+
+#options #toggle-backface-visibility{
+	display: block;
+	position: relative;
+	top: 10px;
+	left:600px;
+	margin: 20px;
+}
+
+#follow_list{
+	background:#E4EFFA;
+	height:230px;
+	-webkit-border-radius: 20px;
+}
+
+div.student_list
+  {
+  margin:2px;
+  border:1px solid #0000ff;
+  height:auto;
+  width:auto;
+  float:left;
+   -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  text-align:center;
+  }
+div.student_list img
+  {
+  display:inline;
+  margin:3px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border:1px solid #ffffff;
+  }
+.sel:hover img
+  {
+  border:5px solid red;
+  top:10px;
+  zoom:1.5;
+  width:100px;
+  height:70px;
+  cursor: pointer;
+  }
+.rem:hover img
+  {
+  zoom:3;
+  cursor: pointer;
+  }
+div.desc
+  {
+  text-align:center;
+  width:50px;
+  height:10px;
+  margin:2px;
+  }
+  
+.line-separator-bottom{
+	height:1px;
+	position:relative;
+	background:gray;
+	border-bottom:1px solid gray;
+	-moz-box-shadow: 0 0 10px 0px #999;
+	-webkit-box-shadow: 0 0 10px 0px #999;
+}
+
+.date{
+	position:relative;
+}
+
+#front-text{
+	text-align:left;
+	position:relative;
+	top:10%;
+	margin-right:10px;
+	font-size:10px;
+	text-transform:capitalize;
+}
+
+ul.checkmark {
+    list-style-type: none;
+}
+ul.checkmark li:before {
+    content:"\2713\0020";
+}
+
+.filter{
+	top:0px;
+	left:0px;
+	text-align:left;
+	display:inline;
+	position:relative;
+}
+
+.studentname{
+	text-align:center;
+}
+
+.comments{
+	display:block;
+	position:relative;
+	top:40px;
+	left:170px;
+	width:880px;
+	margin:20px 20px 20px 20px;
+	text-align:left;
+	background:#E4EFFA;
+	padding:20px 20px 20px 20px;
+}
+
+.commentRow{
+	border-left: 3px solid black;
+	display:block;
+	position:relative;
+	font-size:15px;
+	margin:0px;
+	text-align:left;
+}

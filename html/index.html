@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+  <title>ARIS CUBE</title>
+  <link rel="stylesheet" href="style.css" media="screen" />
+  <link rel="stylesheet" href="cube.css" media="screen" />
+   <link rel="stylesheet" href="button.css" media="screen" />
+  <script src="utils.js"></script>
+  <script src="rotate-box.js"></script>
+  
+</head>
+<body>	
+	<header>
+		<h1>Aris Cube</h1>		
+	</header>
+	
+	<nav></nav>	
+	<div class="aris_cube_page">
+		<article>
+		<div class= "studentname" id="studentname"></div>
+		<input type="hidden" id="studentcode" value="" />
+		<div class="filter">
+			<h4>Filter</h4>
+			<b>Month:</b> 
+			<input type="month" class="date" id="user_date" value="2011-12" />
+		</div>
+		<div id="follow_list">
+			<h4>Following: ${students_follow_cnt}</h4>		
+			% for a in students:
+				<div class="student_list" draggable="true">
+				  <a class="sel" id= "${a['name']}" onclick="GetStudentInfo(this.id);">			  
+				  <img src="student.jpg" alt="" width="100" height="70" />
+				  </a>
+				  <div class="desc">${a['name']}</div>
+				  <a class="rem" name= "${a['name']}" onclick="unfollowStudent(this.name)">			  
+				   <img src="unfollow.png" width="10" height="10" />
+				  </a>
+				</div>
+			% endfor
+		</div>
+		<div class="line-separator-bottom"></div>		 
+		<div class="container">			
+		  <div id="cube">
+			<figure id= "cube_front" class="front">
+				<div style="text-align:center;top=40%;" id="front-text">
+				<B>No Updates Found</B>
+				</div>
+			</figure>
+			<figure class="back">
+				<div id="back-text">
+					<div style="text-align:center top=40px;"><B>
+					No Updates Found
+					</B></div>
+				</div>	
+			</figure>
+			<figure class="right">
+				<div id="right-text">
+					<div style="text-align:center;top=20%;"><B>
+					No Updates Found
+					</B></div>
+				</div>
+			</figure>
+			<figure class="left">
+				<div id="left-text">
+					<div style="text-align:center;top=20%;"><B>
+					No Updates Found
+					</B></div>
+				</div>
+			</figure>
+			<figure class="top">
+				<div id="top-text">
+					<div style="text-align:center;top=20%;"><B>
+					No Updates Found
+					</B></div>
+				</div>
+			</figure>
+			<figure class="bottom">
+				<div id="bottom-text">
+					<div style="text-align:center;top=20%;"><B>
+					No Updates Found
+					</B></div>
+				</div>
+			</figure>
+		  </div>
+		</div>
+		
+		<div id="options">
+			<p id="show-buttons">
+			  <button id="show-front" class="show-front">Profile</button>
+			  <button class="show-back">Attendance</button>
+			  <button class="show-right">ELA</button>
+			  <button class="show-left">Math</button>
+			  <button class="show-top">SST</button>
+			  <button class="show-bottom">Admin</button>
+			</p>
+			<!--<p>
+			  <button id="toggle-backface-visibility">Toggle Visibility</button>
+			</p>-->						
+		</div>
+		
+		
+		<div id="comments" class="comments">			
+		</div>
+	  </article>
+	</div>
+</body>
+</html>
