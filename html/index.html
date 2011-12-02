@@ -17,12 +17,27 @@
 	</header>
 	
 	<nav></nav>	
+	<div class="allStudents">
+	
+		<div id="all_list">			
+			% for a in allStudList:
+				<div class="student_list" draggable="true">				  	  
+				  <img src="student.jpg" alt="" width="100" height="70" />				  
+				  <div class="desc">${a['code']}</div>
+				  <a class="follow" name= "${a['code']}" onclick="followStudent(this.name)" onmouseover="tooltip.show('Follow', 200);"
+				  onmouseout="tooltip.hide();">			  
+				   <img src="follow.jpg" width="10" height="10" />
+				  </a>
+				</div>
+			% endfor
+		</div>
+	</div>
 	<div class="aris_cube_page">
 		<article>
 		
 		<input type="hidden" id="studentcode" value="" />
 		<div class="filter">
-			<input type="month" class="date" id="user_date" value="2011-12" onmouseover="tooltip.show('Select Month and year', 200);"
+			<input type="month" class="date" id="user_date" value="2011-11" onmouseover="tooltip.show('Select Month and year', 200);"
 				  onmouseout="tooltip.hide();"/>
 		</div>
 		
@@ -115,16 +130,19 @@
 			<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics.png" width="165" height="64" 
 			alt="HTML5 Powered with CSS3 / Styling, and Graphics, 3D &amp; Effects" title="HTML5 Powered with CSS3 / Styling, and Graphics, 3D &amp; Effects">
 		</a>
+		&nbsp;&nbsp;
 		<a href="http://www.python.org/community/logos/">
 			<img src="python-powered.png" width="165" height="64" 
 			alt="Python Powered" title="Python Powered">
 		</a>
+		&nbsp;&nbsp;
 		<a href="http://www.mongodb.org/downloads">
 			<img src="PoweredMongoDB.png" width="165" height="64" 
 			alt="MongoDB Powered" title="MongoDB Powered">
 		</a>
+		&nbsp;&nbsp;
 		<a href="http://wiki.wgenhq.net/wiki/index.php/Hackalot">
-			<img src="Hackalot.png" width="165" height="64" 
+			<img src="Hackalot.png" width="100" height="64" 
 			alt="Wireless Generation Hakathon" title="Wireless Generation Hakathon">
 		</a>
 		</div>

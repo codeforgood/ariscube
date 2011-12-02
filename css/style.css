@@ -6,6 +6,20 @@ body{
 	background: black;
 }
 
+.allStudents{
+  position:relative;
+  margin:0 auto;
+  display:block;
+  width:53%;
+  height:200px;
+  background: white; 
+  text-align: center;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border: 1px solid #000;
+  padding:3px 3px 3px 3px;
+}
+
 .aris_cube_page{
   position:relative;
   margin:0 auto;
@@ -201,13 +215,41 @@ h4{
 	margin: 20px;
 }
 
-#follow_list{
+#follow_list {
 	background:#E4EFFA;
 	height:230px;
 	-webkit-border-radius: 20px;
 }
 
-div.student_list
+#all_list{
+	-webkit-border-radius: 20px;
+	padding:10px 10px 10px 10px;
+	height:90%;
+	width:100%;
+	display:block;
+}
+
+div.all_student_list{
+  margin:2px;
+  border:1px solid #0000ff;
+  height:auto;
+  width:auto;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  text-align:center;
+}
+
+div.all_student_list img
+  {
+  display:inline;
+  margin:3px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border:1px solid #ffffff;
+  }
+
+
+div.student_list 
   {
   margin:2px;
   border:1px solid #0000ff;
@@ -240,6 +282,13 @@ div.student_list img
   zoom:3;
   cursor: pointer;
   }
+  
+.follow:hover img
+ {
+  zoom:4;
+  cursor: pointer;
+}
+  
 div.desc
   {
   text-align:left;

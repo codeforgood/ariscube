@@ -61,6 +61,10 @@ conf = {
     '/Hackalot.png': {
         'tools.staticfile.on': True,
         'tools.staticfile.filename': os.path.abspath(os.path.join(os.path.dirname(__file__), 'images/Hackalot.png'))
+    },
+	'/follow.jpg': {
+        'tools.staticfile.on': True,
+        'tools.staticfile.filename': os.path.abspath(os.path.join(os.path.dirname(__file__), 'images/follow.jpg'))
     }
 } 
 cherrypy.quickstart(root, '/', conf)

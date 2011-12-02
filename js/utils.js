@@ -39,6 +39,37 @@ function unfollowStudent(code){
 	document.getElementById('follow_cnt').innerHTML= serverResponse.students_follow_cnt;
 }
 
+function followStudent(code){
+	var url=document.URL;
+	var userAttribute=url.split("?")[1];
+	var user=userAttribute.split("=");
+	if(user[0]== "username"){
+		username=user[1];
+	}
+    var Url = "http://localhost:8000/ariscube/student/follow?username="+username+"&code="+code;
+    xmlHttp = new XMLHttpRequest(); 
+    xmlHttp.open( "POST", Url, false );
+    xmlHttp.send( null );
+	var serverResponse = JSON.parse(xmlHttp.responseText);
+	if(serverResponse.success==1){
+		var followingDiv = document.getElementById("follow_list");
+		var divTag = document.createElement("div");
+		divTag.className ="student_list";
+		divTag.innerHTML =
+		  "<a class='sel' id="+code+" onclick=GetStudentInfo(this.id);"
+		  + " onmouseover=tooltip.show('Show Cube', 200);"
+		  + " onmouseout=tooltip.hide(); >"
+		  + " <img src='student.jpg' width='100' height='70' /></a>"
+		  + " <div class='desc'>"+code+"</div>"
+		  + " <a class='rem' name="+code+" onclick=unfollowStudent(this.name)" 
+		  + " onmouseover=tooltip.show('Unfollow',200);"
+		  + " onmouseout=tooltip.hide();>"			  
+		  + " <img src='unfollow.png' width='10' height='10' /> </a>";
+		followingDiv.appendChild(divTag);
+		document.getElementById('follow_cnt').innerHTML= serverResponse.students_follow_cnt;
+	}
+}
+
 var xmlHttp = null;
 
 function GetStudentInfo(code)

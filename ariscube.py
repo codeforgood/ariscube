@@ -43,8 +43,12 @@ class ArisCube(object):
             studentsList=user["following"]
             students_list=[]
             for student in studentsList:
-                students_list.append({"name":student})                
-            return tmpl.render(students=students_list, students_follow_cnt=len(students_list))
+                students_list.append({"name":student})
+            allStudents=self.studentsCol.find()
+            allStudList=[]
+            for stud in allStudents:
+                allStudList.append({"name":stud['name'],"code":stud['code']})
+            return tmpl.render(students=students_list, students_follow_cnt=len(students_list), allStudList=allStudList)
             
     def DELETE(self, *vpath, **params):
         self.paramMap = {}
@@ -79,3 +83,13 @@ class ArisCube(object):
                 self.feedsCol.update({"code": self.paramMap["code"], "year": self.paramMap["year"], "month":self.paramMap["month"]},
                 {"$push": {"comments":comment}})
                 return json.dumps({"success":1})
+            elif(vpath[0] == "student" and vpath[1] == "follow"):
+                print "follow block"
+                print self.paramMap["username"]
+                print self.paramMap["code"]
+                cherrypy.response.headers["Content-Type"] = "application/json"
+                cherrypy.response.status = 200                
+                self.usersCol.update({"username": self.paramMap["username"] }, { "$push" : { "following": self.paramMap["code"]}})
+                user=self.usersCol.find_one({"username": self.paramMap["username"]})
+                studentsList=user["following"]
+                return json.dumps({"success":1, "students_follow_cnt":len(studentsList)})
